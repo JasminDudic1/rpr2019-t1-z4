@@ -17,14 +17,18 @@ public class Supermarket {
 
     }
 
-    public void dodajArtikl(Artikl a){
+    public boolean dodajArtikl(Artikl a){
 
-        if(brojArtikla==1000) System.out.println("Supermarket je pun");
+        if(brojArtikla==1000)
+            System.out.println("Supermarket je pun");
 
         else {
             supermarket[brojArtikla] = a;
             brojArtikla = brojArtikla + 1;
+            return true;
         }
+
+        return false;
 
     }
 
@@ -33,7 +37,9 @@ public class Supermarket {
         for (int i = 0; i < brojArtikla; i++) {
 
             if( kod.equals(supermarket[i].getKod())){
-                return supermarket[i];
+                Artikl izbaceni=supermarket[i];
+                supermarket[i]=null;
+                return izbaceni;
             }
 
         }
