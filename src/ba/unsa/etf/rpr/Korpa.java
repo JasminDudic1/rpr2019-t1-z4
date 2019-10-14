@@ -13,7 +13,16 @@ public Artikl[] getArtikli(){
 
 }
 
+    public void dodajArtikl(Artikl a){
 
+        if(brojArtikla==50) System.out.println("Korpa je puna");
+
+    else {
+            korpa[brojArtikla] = a;
+            brojArtikla = brojArtikla + 1;
+        }
+
+    }
 
 
 }
