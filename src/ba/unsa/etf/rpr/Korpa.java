@@ -35,8 +35,9 @@ public Artikl[] getArtikli(){
             if(korpa[i]==null)continue;
 
             if( kod.equals(korpa[i].getKod())){
-
-                return korpa[i];
+            Artikl izbacit=korpa[i];
+            korpa[i]=null;
+                return izbacit;
             }
 
         }

@@ -23,8 +23,18 @@ public class Supermarket {
             System.out.println("Supermarket je pun");
 
         else {
-            supermarket[brojArtikla] = a;
-            brojArtikla = brojArtikla + 1;
+
+            for (int i = 0; i <1000 ; i++) {
+
+                if(supermarket[i]==null){
+                    supermarket[i]=a;
+                    break;
+
+                }
+
+            }
+
+
             return true;
         }
 
@@ -34,7 +44,9 @@ public class Supermarket {
 
     public Artikl izbaciArtiklSaKodom(String kod){
 
-        for (int i = 0; i < brojArtikla; i++) {
+        for (int i = 0; i < 1000; i++) {
+
+            if(supermarket[i]==null) continue;
 
             if( kod.equals(supermarket[i].getKod())){
                 Artikl izbaceni=supermarket[i];

@@ -12,6 +12,7 @@ public class Artikl {
         this.naziv=naziv;
         this.cijena=cijena;
         this.kod=kod;
+
     }
 
 
@@ -25,5 +26,12 @@ public class Artikl {
     public String getKod(){
         return kod;
     }
+
+    /*public Artikl(Artikl a){
+        this.naziv=a.naziv;
+        this.cijena=a.cijena;
+        this.kod=a.kod;
+
+    }*/
 
 }
