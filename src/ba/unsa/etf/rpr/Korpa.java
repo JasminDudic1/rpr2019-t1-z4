@@ -20,8 +20,17 @@ public Artikl[] getArtikli(){
         if(brojArtikla==50) System.out.println("Korpa je puna");
 
     else {
-            korpa[brojArtikla] = a;
-            brojArtikla = brojArtikla + 1;
+
+            for (int i = 0; i < 50; i++) {
+
+                if(korpa[i]==null){
+                    korpa[i]=a;
+                    break;
+
+                }
+
+
+            }
             return true;
         }
     return false;
@@ -30,18 +39,33 @@ public Artikl[] getArtikli(){
 
     public Artikl izbaciArtiklSaKodom(String kod) {
 
-        for (int i = 0; i < brojArtikla; i++) {
+        for (int i = 0; i < 50; i++) {
 
             if(korpa[i]==null)continue;
 
             if( kod.equals(korpa[i].getKod())){
+
             Artikl izbacit=korpa[i];
             korpa[i]=null;
-                return izbacit;
+            ocisti(i);
+
+            return izbacit;
+
             }
 
         }
         return null;
+
+    }
+
+    private void ocisti(int n){
+
+        for (int i = n; i < 49; i++) {
+
+            korpa[i]=korpa[i+1];
+
+        }
+
 
     }
 

@@ -49,13 +49,29 @@ public class Supermarket {
             if(supermarket[i]==null) continue;
 
             if( kod.equals(supermarket[i].getKod())){
+
                 Artikl izbaceni=supermarket[i];
                 supermarket[i]=null;
+                ocisti(i);
+
+
                 return izbaceni;
             }
 
         }
         return null;
+
+    }
+
+
+    private void ocisti(int n){
+
+        for (int i = n; i < 999; i++) {
+
+            supermarket[i]=supermarket[i+1];
+
+        }
+
 
     }
 
