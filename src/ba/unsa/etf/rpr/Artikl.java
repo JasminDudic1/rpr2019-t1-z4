@@ -27,7 +27,7 @@ public class Artikl {
         return kod;
     }
 
-    /*public Artikl(Artikl a){
+   /* public Artikl(Artikl a){
         this.naziv=a.naziv;
         this.cijena=a.cijena;
         this.kod=a.kod;

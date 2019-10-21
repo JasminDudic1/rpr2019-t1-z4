@@ -15,9 +15,16 @@ public Artikl[] getArtikli(){
 
 }
 
+
+
+
     public boolean dodajArtikl(Artikl a){
 
-        if(brojArtikla==50) System.out.println("Korpa je puna");
+        if(brojArtikla>50){
+            throw new IllegalCallerException("Korpa je puna");
+
+        }
+
 
     else {
 
@@ -25,16 +32,19 @@ public Artikl[] getArtikli(){
 
                 if(korpa[i]==null){
                     korpa[i]=a;
+                    brojArtikla++;
                     break;
-
                 }
-
 
             }
             return true;
         }
-    return false;
+
     }
+
+int getBrojArtikla(){
+    return brojArtikla;
+}
 
 
     public Artikl izbaciArtiklSaKodom(String kod) {
@@ -48,6 +58,7 @@ public Artikl[] getArtikli(){
             Artikl izbacit=korpa[i];
             korpa[i]=null;
             ocisti(i);
+            brojArtikla--;
 
             return izbacit;
 
